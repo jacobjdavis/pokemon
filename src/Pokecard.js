@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import './Pokecard.css';
 
-// const POKE_API="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
 const POKE_API="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/"
 class Pokecard extends Component{
     render() {
         let num = this.props.id.toString().padStart(3, "0");
-        console.log(num.padStart(3, "0"));
         let imgSrc = `${POKE_API}${num}.png`;
         return (
             <div className="Pokecard">
