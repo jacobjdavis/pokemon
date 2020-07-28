@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import Pokedex from './Pokedex';
 
 class Pokegame extends Component {
+    constructor(props) {
+        super();
+        this.state = {
+            score: 0
+        }
+    };
+
     static defaultProps = {
         pokemon: [
             {id: 4, name: 'Charmander', type: 'fire', exp: 62},
@@ -25,7 +32,7 @@ class Pokegame extends Component {
         }
         let exp1 = hand1.reduce((exp, pokemon) => exp + pokemon.exp, 0);
         let exp2 = hand2.reduce((exp, pokemon) => exp + pokemon.exp, 0);
-        console.log(hand1, hand2);
+
         return (
             <div>
                 <Pokedex pokemon={hand1} exp={exp1} isWinner={exp1 > exp2}/>
